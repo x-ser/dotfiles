@@ -1,0 +1,6 @@
+.terminator-terminal-window vte-terminal {
+    padding-top: 15px;      /* Keeps the hostname at the very top as you requested */
+    padding-left: 15px;    /* Adds the space to the left side */
+    padding-right: 10px;
+    padding-bottom: 5px;
+}

@@ -1,0 +1,93 @@
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
+# Example Format Custom.vpn
+# format = """
+# $hostname \
+# $directory\
+# $git_branch\
+# $git_status\
+# $python\
+# $rust\
+# $golang\
+# $custom\
+# $character\
+# $line_break\
+# """
+
+# --- General Settings ---
+add_newline = false
+format = """
+$hostname \
+$directory\
+$git_branch\
+$git_status\
+$python\
+$rust\
+$golang\
+$character\
+$line_break\
+"""
+
+# --- Character (The Prompt Symbol) ---
+[character]
+success_symbol = '[➜](bold green)'
+error_symbol = '[➜](bold red)'
+
+# --- Directory ---
+[directory]
+truncation_length = 3
+truncation_symbol = "…/"
+style = "bold cyan"
+
+# --- Git Status ---
+[git_branch]
+symbol = " "
+style = "bold purple"
+
+[git_status]
+style = "bold red"
+format = '([\[$all_status$ahead_behind\]]($style) )'
+
+# --- Languages & Tools (Relevant to your folders) ---
+[rust]
+symbol = " "
+style = "bold orange"
+
+[golang]
+symbol = " "
+style = "bold blue"
+
+[python]
+symbol = " "
+style = "yellow"
+pyenv_prefix = "venv "
+
+# --- Username Settings ---
+[username]
+show_always = false
+disabled = true  # This completely hides "root"
+
+# --- Specialized Modules ---
+[hostname]
+ssh_only = false
+format = "[$hostname]($style) "
+trim_at = "."
+style = "bold dimmed white"
+
+[cmd_duration]
+min_time = 500
+show_milliseconds = false
+format = "took [$duration]($style) "
+style = "yellow"
+
+# --- Custom Module for HTB/VPN ---
+# This checks if a tun0 interface (VPN) is active
+[custom.vpn]
+description = "Show active VPN connection"
+# Use single quotes for the whole command to avoid backslash escape errors
+command = 'ip addr show tun0 | grep -oP "(?<=inet\s)\d+(\.\d+){3}"'
+when = "ip addr show tun0"
+shell = ["bash", "--noprofile", "--norc"]
+style = "bold blue"
+format = "via [󰆟 $output]($style) "

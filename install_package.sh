@@ -61,7 +61,7 @@ source $HOME/.cargo/env
 
 # --- Tools
 echo -e "${CYAN}Installing core security tools...${NC}"
-pacman -S --needed --noconfirm \
+sudo pacman -S --needed --noconfirm \
     nmap \
     hashcat \
     john \
@@ -78,6 +78,9 @@ pacman -S --needed --noconfirm \
 
 # --- yay
 cd $TEMP && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si --noconfirm
+
+# --- python3.13
+yay -S python313
 
 # --- More tools
 cargo install rustscan

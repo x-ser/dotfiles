@@ -41,7 +41,7 @@ eval "$(starship init zsh)"                                 # starship
 [[ -f "$HOME/.cargo/env" ]] && source "$HOME/.cargo/env"    # rustup
 
 # --- Vistual Code 
-alias code='code-oss --no-sandbox --user-data-dir="/root/.vscode-oss"'
+alias code='code-oss --no-sandbox --user-data-dir="$HOME/.vscode-oss"'
 
 # --- Machine Function
 # Function to set up a new HTB machine

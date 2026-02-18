@@ -65,7 +65,6 @@ sudo pacman -S --needed --noconfirm \
     nmap \
     hashcat \
     john \
-    ffuf \
     openvpn \
     metasploit \
     krb5 \
@@ -79,8 +78,10 @@ sudo pacman -S --needed --noconfirm \
 # --- yay
 cd $TEMP && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si --noconfirm
 
-# --- python3.13
-yay -S python313
+# --- yay repo
+yay -S --needed --noconfirm \
+    python313 \
+    ffuf
 
 # --- More tools
 cargo install rustscan

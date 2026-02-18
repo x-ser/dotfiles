@@ -18,9 +18,9 @@ mkdir -p ~/.config/gtk-3.0
 echo -e "${YELLOW}Copy configuration files...${NC}"
 cp -rv config/i3 ~/.config
 cp -rv config/polybar ~/.config
+cp -rv config/starship ~/.config
 cp config/terminator/config ~/.config/terminator/config
 cp config/rofi/config.rasi ~/.config/rofi/config.rasi
-cp config/starship/config.toml ~/.config/starship/config.toml
 cp config/gtk-3.0/gtk.css ~/.config/gtk-3.0/gtk.css
 cp .zshrc ~/.zshrc
 

@@ -28,7 +28,8 @@ sudo pacman -S --needed --noconfirm \
     terminator \
     rofi \
     feh \
-    ttf-jetbrains-mono-nerd
+    ttf-jetbrains-mono-nerd \
+    thunar
 
 # --- Development & Shell
 echo -e "${CYAN}Installing development tools and Zsh...${NC}"
@@ -50,7 +51,9 @@ sudo pacman -S --needed --noconfirm \
     libffi \
     mpdecimal \
     pocl \
-    jre21-openjdk
+    jre21-openjdk \
+    rsync
+    
 
 pipx ensurepath
 

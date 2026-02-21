@@ -32,7 +32,7 @@ sudo pacman -S --needed --noconfirm \
     thunar \
     gvfs \
     tumbler \
-    thunar-archive-plugin \ 
+    thunar-archive-plugin \
     file-roller \
     picom
 

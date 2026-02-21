@@ -57,8 +57,8 @@ sudo pacman -S --needed --noconfirm \
     mpdecimal \
     pocl \
     jre21-openjdk \
-    rsync
-    
+    rsync \
+    firefox 
 
 pipx ensurepath
 

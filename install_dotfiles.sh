@@ -19,6 +19,8 @@ echo -e "${YELLOW}Copy configuration files...${NC}"
 cp -rv config/i3 ~/.config
 cp -rv config/polybar ~/.config
 cp -rv config/starship ~/.config
+cp -rv config/picom ~/.config
+cp -rv config/Thunar ~/.config
 cp config/terminator/config ~/.config/terminator/config
 cp config/rofi/config.rasi ~/.config/rofi/config.rasi
 cp config/gtk-3.0/gtk.css ~/.config/gtk-3.0/gtk.css

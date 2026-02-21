@@ -29,7 +29,12 @@ sudo pacman -S --needed --noconfirm \
     rofi \
     feh \
     ttf-jetbrains-mono-nerd \
-    thunar
+    thunar \
+    gvfs \
+    tumbler \
+    thunar-archive-plugin \ 
+    file-roller \
+    picom
 
 # --- Development & Shell
 echo -e "${CYAN}Installing development tools and Zsh...${NC}"

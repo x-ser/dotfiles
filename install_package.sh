@@ -116,3 +116,12 @@ git clone https://github.com/cddmp/enum4linux-ng.git $TEMP/enum4linux-ng
 pipx install $TEMP/enum4linux-ng
 
 echo -e "${CYAN}--- Package Installation Complete! ---${NC}"
+
+
+# --- Pentest Tweaks: Allow opening ports < 1024 without root
+echo "[*] Configuring unprivileged ports..."
+
+echo 'net.ipv4.ip_unprivileged_port_start=0' | sudo tee /etc/sysctl.d/50-unprivileged-ports.conf > /dev/null
+sudo sysctl --system > /dev/null
+
+echo "[+] Port configuration applied successfully!"

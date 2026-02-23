@@ -58,7 +58,7 @@ sudo pacman -S --needed --noconfirm \
     pocl \
     jre21-openjdk \
     rsync \
-    firefox 
+    firefox
 
 pipx ensurepath
 
@@ -81,7 +81,9 @@ sudo pacman -S --needed --noconfirm \
     dnsutils \
     sqlmap \
     ntp \
-    libfaketime
+    libfaketime \
+    gcc \
+    mingw-w64-toolchain
 
 # --- yay
 cd $TEMP && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si --noconfirm

@@ -83,6 +83,7 @@ sudo pacman -S --needed --noconfirm \
     ntp \
     libfaketime \
     gcc \
+    mingw-w64-gcc \
     mingw-w64-toolchain
 
 # --- yay

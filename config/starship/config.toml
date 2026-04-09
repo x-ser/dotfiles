@@ -1,0 +1,78 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+# ============================================================
+# Starship — Dark Monochrome Theme
+# ============================================================
+
+add_newline = false
+
+format = """
+$hostname \
+$directory\
+$git_branch\
+$git_status\
+$python\
+$rust\
+$golang\
+$cmd_duration\
+$character\
+"""
+
+# --- Prompt symbol ---
+[character]
+success_symbol = '[](bold white)'
+error_symbol   = '[](bold dimmed white)'
+
+# --- Directory ---
+[directory]
+truncation_length  = 3
+truncation_symbol  = "…/"
+style              = "bold white"
+read_only          = " 󰌾"
+read_only_style    = "dimmed white"
+
+# --- Git ---
+[git_branch]
+symbol = " "
+style  = "dimmed white"
+format = "[$symbol$branch]($style) "
+
+[git_status]
+style  = "white"
+format = '([\[$all_status$ahead_behind\]]($style) )'
+
+# --- Languages ---
+[rust]
+symbol = " "
+style  = "dimmed white"
+format = "[$symbol$version]($style) "
+
+[golang]
+symbol = " "
+style  = "dimmed white"
+format = "[$symbol$version]($style) "
+
+[python]
+symbol       = " "
+style        = "dimmed white"
+format       = "[$symbol$version]($style) "
+pyenv_prefix = "venv "
+
+# --- Command duration ---
+[cmd_duration]
+min_time          = 500
+show_milliseconds = false
+format            = "[took $duration]($style) "
+style             = "dimmed white"
+
+# --- Hostname ---
+[hostname]
+ssh_only = false
+format   = "[$hostname]($style) "
+trim_at  = "."
+style    = "bold dimmed white"
+
+# --- Username (hidden) ---
+[username]
+show_always = false
+disabled    = true

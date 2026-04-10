@@ -14,6 +14,9 @@ source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/nul
 export STARSHIP_CONFIG="$HOME/.config/starship/config.toml"
 eval "$(starship init zsh)"
 
+# --- Zoxide Smart CD
+eval "$(zoxide init zsh --cmd cd)"
+
 # --- PATH
 export PATH="$HOME/.local/bin:$HOME/.cargo/bin:$PATH"
 

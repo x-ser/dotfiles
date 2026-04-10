@@ -77,6 +77,8 @@ sudo apt install -y \
     gcc \
     libfaketime \
     ntpsec \
+    bat \
+    zoxide \
     zsh-autosuggestions \
     zsh-syntax-highlighting
 

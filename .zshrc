@@ -17,6 +17,11 @@ eval "$(starship init zsh)"
 # --- Zoxide Smart CD
 eval "$(zoxide init zsh --cmd cd)"
 
+# --- Batcat A cat(1) clone with wings. 
+alias cat='batcat --paging=never'
+alias -g -- -h='-h 2>&1 | batcat --language=help --style=plain'
+alias -g -- --help='--help 2>&1 | batcat --language=help --style=plain'
+
 # --- PATH
 export PATH="$HOME/.local/bin:$HOME/.cargo/bin:$PATH"
 
